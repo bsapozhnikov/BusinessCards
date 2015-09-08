@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>My Cards</title>
+	<script src="static/lib/jquery.js"></script>
+	<script src="static/lib/lodash.js"></script>
+	<script src="static/lib/backbone.js"></script>
+	<script src="static/lib/backbone.marionette.js"></script>
+	<link rel="stylesheet" href="static/style.css" type="text/css" media="screen" />
+    </head>
+    <body>
+	<script type="text/template" id="card-template">
+	    <img src="/static/png/delete.png" class="icon16" id="delete"/>
+	    <div class="card-name"><%- name %></div>
+	</script>
+	<script type="text/template" id="cards-template">
+	    <button id="open-new-card-form">New Card</button>
+	    <div id="new-card-form">
+		<input type="text" id="new-card-name" placeholder="Name" />
+		<br>
+		<input type="submit" id="add-new-card" value="Add" />
+	    </div>
+	    <ul id="card-list"></ul>
+	</script>
+	<div id="wrapper">
+	    <div id="cards"></div>
+	</div>
+	<script src="static/control.js"></script>
+	<script src="static/app.js"></script>
+    </body>
+</html>

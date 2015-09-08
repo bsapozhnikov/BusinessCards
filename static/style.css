@@ -1,0 +1,56 @@
+button, input[type="submit"]{
+    height: 30px;
+    width: 75px;
+    border: none;
+    border-radius: 2px;
+}
+
+button:focus, input[type="submit"]:focus{
+    outline: 0;
+}
+
+input[type="text"]{
+    border-radius: 2px;
+    border: solid 1px #eee;
+    font-size: 1.2em;
+    vertical-align: bottom;
+    width: 100px;
+    margin: 3px;
+    margin-left: 0px;
+}
+
+button#open-new-card-form{
+    background-color: #48f;
+}
+input#add-new-card{
+    background-color: #4d4;
+}
+
+ul#card-list{
+    list-style-type: none;
+}
+li.card{
+    display: block;
+    width: 250px;
+    height: 100px;
+    float: left;
+    border: solid 1px #000;
+    border-radius: 2px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.card-name{
+    color: #d24;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+img.icon16{
+    width: 16px;
+    height: 16px;
+    float: left;
+}
+
