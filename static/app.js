@@ -41,11 +41,13 @@ App.CardsView = Marionette.CompositeView.extend({
     events: {
 	'click #add-new-card': function(){
 	    var n = $('#new-card-name').val();
-	    if (n.length > 0){
-		var c = new Card({name: n});
-		this.collection.add(c);
-		c.save();
+	    var c = $('#new-card-company').val();
+	    if (n.length + c.length > 0){
+		var card = new Card({name: n, company: c});
+		this.collection.add(card);
+		card.save();
 		$('#new-card-name').val('');
+		$('#new-card-company').val('');
 	    }
 	}
     }

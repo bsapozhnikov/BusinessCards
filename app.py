@@ -13,7 +13,7 @@ def handleCardsRequest():
     if request.method=='GET':
         return json.dumps(db.getCards())
     else:
-        return `db.addCard(request.json['name'])`
+        return `db.addCard(request.json['name'],request.json['company'])`
 
 @app.route("/cards/<cardID>",methods=['DELETE'])
 def handleCardRequest(cardID):

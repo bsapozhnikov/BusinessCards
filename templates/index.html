@@ -12,13 +12,27 @@
 	<script type="text/template" id="card-template">
 	    <img src="/static/png/delete.png" class="icon16" id="delete"/>
 	    <div class="card-name"><%- name %></div>
+	    <div class="card-company"><%- company %></div>
 	</script>
 	<script type="text/template" id="cards-template">
 	    <button id="open-new-card-form">New Card</button>
 	    <div id="new-card-form">
-		<input type="text" id="new-card-name" placeholder="Name" />
-		<br>
-		<input type="submit" id="add-new-card" value="Add" />
+		<div id="new-card-types">
+		    <div class="new-card-type" id="person">Person</div>
+		    <div class="new-card-type" id="company">Company</div>
+		</div><br>
+		<div id="new-card-form-container">
+		    <div class="new-card-form" id="new-card-form-person">
+			<input type="text" id="new-card-name" placeholder="Name" /><br>
+			<input type="text" id="new-card-company" placeholder="Company" /><br>
+			<input type="submit" id="add-new-card" value="Add" />
+		    </div>
+		    <div class="new-card-form" id="new-card-form-company">
+			<input type="text" id="new-card-company" placeholder="Company" /><br>
+		    <input type="submit" id="add-new-card" value="Add" />
+		    </div>
+		</div>
+		
 	    </div>
 	    <ul id="card-list"></ul>
 	</script>

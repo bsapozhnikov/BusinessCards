@@ -23,7 +23,7 @@ def createTable(tablename, attr):
     print ("CREATE TABLE %s(%s)") % (tablename, s)
 
 def createTables():
-    createTable('cards',[('name','text')])
+    createTable('cards',[('name','text'),('company','text')])
 
 def dropTables():
     dropTable('cards')
@@ -34,15 +34,15 @@ def getCards():
     c = conn.cursor()
     cards = []
     for row in c.execute('SELECT rowid,* FROM cards'):
-        cards.append({"id":row[0], "name":row[1]})
+        cards.append({"id":row[0], "name":row[1], "company":row[2]})
     print 'cards: '+`cards`
     return cards    
      
-def addCard(name):
+def addCard(name,company):
     conn = sqlite3.connect('data.db')
     c = conn.cursor()
-    t = (name, )
-    c.execute("INSERT INTO cards VALUES (?)",t)
+    t = (name, company)
+    c.execute("INSERT INTO cards VALUES (?,?)",t)
     conn.commit()
     print "added %s" %(name)
     return True   
